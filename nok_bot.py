@@ -52,10 +52,10 @@ async def help_command(message: types.Message):
         await message.answer('Пока не работает. Жми HELP.')
     else:
         try:
-            photo = open(f".\\screen_questions\\{message.text}.png", "rb")
+            photo = open(f"{message.text}.png", "rb")
             await bot.send_photo(message.from_user.id, photo)
         except Exception as e:
-            # print(e)
+            print(e)
             await message.answer('Не пойму чего ты хочешь, пиши код вопроса:')
 
 
